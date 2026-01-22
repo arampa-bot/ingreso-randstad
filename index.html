@@ -10,7 +10,7 @@
             --azul-intermedio: #1c3b7a; 
             --azul-celeste: #0096dc; 
             --blanco: #ffffff; 
-            --naranja-randstad: #ff6600; /* Color naranja sólido para impacto */
+            --naranja-randstad: #ff6600; 
             --gris-claro: #f4f7f9;
             --beige-randstad: #f7f6f4;
         }
@@ -71,13 +71,12 @@
             padding: 20px;
         }
 
-        /* Alerta en Naranja Sólido con letra grande y blanca */
         .alerta { 
             background: var(--naranja-randstad);
             color: var(--blanco);
             padding: 30px; 
             border-radius: 15px; 
-            font-size: 20px; /* Letra más grande */
+            font-size: 20px; 
             margin: 40px 0; 
             text-align: center; 
             font-weight: bold;
@@ -85,17 +84,21 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.15);
         }
 
-        .main-content {
-            background-color: var(--azul-oscuro);
-            padding: 40px 20px;
-            border-radius: 30px 30px 0 0;
-            color: var(--blanco);
-        }
+        /* --- INTERCAMBIO DE COLORES DE SECCIONES --- */
 
-        .benefits-content {
+        /* Ahora Pasos Obligatorios tiene el fondo celeste de beneficios */
+        .main-content {
             background-color: var(--azul-celeste);
             padding: 40px 20px;
+            border-radius: 30px 30px 0 0;
             color: var(--azul-oscuro);
+        }
+
+        /* Ahora Gestión y Beneficios tiene el fondo azul oscuro */
+        .benefits-content {
+            background-color: var(--azul-oscuro);
+            padding: 40px 20px;
+            color: var(--blanco);
         }
 
         .section-title {
@@ -106,8 +109,8 @@
             align-items: center;
         }
 
-        .main-content .section-title { color: var(--blanco); }
-        .benefits-content .section-title { color: var(--azul-oscuro); }
+        .main-content .section-title { color: var(--azul-oscuro); }
+        .benefits-content .section-title { color: var(--blanco); }
 
         .section-title::after {
             content: "";
@@ -118,15 +121,9 @@
             margin-left: 20px;
         }
 
-        .step-card { 
-            background: var(--blanco); 
-            border-radius: 18px; 
-            padding: 30px; 
-            margin-bottom: 25px; 
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-            color: var(--azul-oscuro);
-        }
+        /* --- INTERCAMBIO DE TARJETAS Y BOTONES --- */
 
+        /* Pasos 1, 2 y 3 pasan a ser Beige con botón Marino */
         .step-card-beige {
             background: var(--beige-randstad);
             border-radius: 18px; 
@@ -136,11 +133,21 @@
             color: var(--azul-oscuro);
         }
 
+        /* Pasos 4, 5 y 6 pasan a ser Blancos con botón Celeste */
+        .step-card-white { 
+            background: var(--blanco); 
+            border-radius: 18px; 
+            padding: 30px; 
+            margin-bottom: 25px; 
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            color: var(--azul-oscuro);
+        }
+
         .step-tag { 
             font-size: 11px; 
             font-weight: bold; 
             letter-spacing: 1px;
-            background: var(--azul-celeste);
+            background: var(--azul-intermedio);
             color: var(--blanco);
             padding: 4px 12px;
             border-radius: 20px;
@@ -159,9 +166,9 @@
             line-height: 1.6; 
         }
 
-        .btn-celeste { 
+        .btn-marino { 
             display: block; 
-            background: var(--azul-celeste); 
+            background: var(--azul-oscuro); 
             color: var(--blanco); 
             text-align: center; 
             padding: 18px; 
@@ -171,9 +178,9 @@
             font-size: 16px; 
         }
 
-        .btn-marino { 
+        .btn-celeste { 
             display: block; 
-            background: var(--azul-oscuro); 
+            background: var(--azul-celeste); 
             color: var(--blanco); 
             text-align: center; 
             padding: 18px; 
@@ -215,7 +222,7 @@
 <body>
 
     <header class="banner-header">
-        <img src="Randstad_Master_Logo_Horizontal_Blue_RGB.png" alt="Bienvenida a Randstad">
+        <img src="LinkedIn - Partner for Talent (1).png">
     </header>
 
     <div class="hero">
@@ -237,25 +244,25 @@
         <div class="container">
             <h2 class="section-title">pasos obligatorios</h2>
 
-            <div class="step-card">
+            <div class="step-card-beige">
                 <span class="step-tag">paso 1</span>
                 <div class="step-title">ficha de ingreso</div>
                 <div class="step-info">¡Es el paso más importante! En el mismo te solicitamos información para generar tu alta en BPS, declaración de DGI y confeccionar tu contrato. Ten a mano tu documento de identidad y carné de salud para ingresar las fotos.</div>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdllAz5zn_TTA8Pt4DHEEYTCc_7P1_gC9BtsKGxD54ySzc5dQ/viewform" class="btn-celeste" target="_blank">completar ficha</a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdllAz5zn_TTA8Pt4DHEEYTCc_7P1_gC9BtsKGxD54ySzc5dQ/viewform" class="btn-marino" target="_blank">completar ficha</a>
             </div>
 
-            <div class="step-card">
+            <div class="step-card-beige">
                 <span class="step-tag">paso 2</span>
                 <div class="step-title">identidad digital</div>
                 <div class="step-info">Utilizamos Identidad Mobile de Abitab para la firma digital de tu contrato. Para que puedas acceder al contrato y firmarlo, es necesario que cuentes con tu usuario activado.</div>
-                <a href="https://iddigital.com.uy/es/identidaddigital/idfirma/" class="btn-celeste" target="_blank">obtener identidad mobile</a>
+                <a href="https://iddigital.com.uy/es/identidaddigital/idfirma/" class="btn-marino" target="_blank">obtener identidad mobile</a>
             </div>
 
-            <div class="step-card">
+            <div class="step-card-beige">
                 <span class="step-tag">paso 3</span>
                 <div class="step-title">asociar medio de pago</div>
                 <div class="step-info">Debes indicar tu preferencia bancaria para asociar a los pagos de salarios de tu actividad. Puedes ingresar tu cuenta de cualquier Banco, Prepagas o solicitar la apertura de cuenta en el banco BBVA.</div>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSd9ch1QrIvWVhPtt8gJLxkcYPRsqigzgCEF9m1JaBw4KAa0oA/viewform" class="btn-celeste" target="_blank">completar formulario de pago</a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSd9ch1QrIvWVhPtt8gJLxkcYPRsqigzgCEF9m1JaBw4KAa0oA/viewform" class="btn-marino" target="_blank">completar formulario de pago</a>
             </div>
         </div>
     </div>
@@ -264,25 +271,25 @@
         <div class="container">
             <h2 class="section-title">gestión y beneficios</h2>
 
-            <div class="step-card-beige">
+            <div class="step-card-white">
                 <span class="step-tag">recibos</span>
                 <div class="step-title">recibos de sueldo</div>
                 <div class="step-info">Días posteriores a tu ingreso recibirás un correo electrónico por parte de Randstad con un código de invitación para activar tu cuenta en TuLegajo. El código vence en 5 días; estate atento para crear tu contraseña y firmar tus recibos.</div>
-                <a href="https://app.tulegajo.com" class="btn-marino">acceder a tulegajo</a>
+                <a href="https://app.tulegajo.com" class="btn-celeste">acceder a tulegajo</a>
             </div>
 
-            <div class="step-card-beige">
+            <div class="step-card-white">
                 <span class="step-tag">adelantos</span>
                 <div class="step-title">adelantos de sueldo</div>
                 <div class="step-info">Al cumplir un mes trabajado, podrás solicitar un adelanto de hasta $ 5000 entre el 1 y el 15 de cada mes. Se abonan el día 20 al medio de pago que tengas asociado.</div>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfuT4Y4QoOqYThos2xiYR7X0zuwKYymV_Y3ZcU6HkVKkB-3cQ/viewform" class="btn-marino" target="_blank">solicitar adelanto</a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfuT4Y4QoOqYThos2xiYR7X0zuwKYymV_Y3ZcU6HkVKkB-3cQ/viewform" class="btn-celeste" target="_blank">solicitar adelanto</a>
             </div>
 
-            <div class="step-card-beige">
+            <div class="step-card-white">
                 <span class="step-tag">beneficios</span>
                 <div class="step-title">club randstad</div>
                 <div class="step-info">Accede a beneficios y descuentos en diversos rubros a través de cuponstar.com al cumplir tu primer mes trabajado. Tu usuario quedará habilitado automáticamente y podrás ingresar con tu documento.</div>
-                <a href="https://clubrandstad.beta.uy.cuponstar.com/" class="btn-marino" target="_blank">explorar beneficios</a>
+                <a href="https://clubrandstad.beta.uy.cuponstar.com/" class="btn-celeste" target="_blank">explorar beneficios</a>
             </div>
         </div>
     </div>
