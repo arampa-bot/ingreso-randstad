@@ -10,7 +10,7 @@
             --azul-intermedio: #1c3b7a; 
             --azul-celeste: #0096dc; 
             --blanco: #ffffff; 
-            --rojo-alerta: rgba(255, 82, 82, 0.2); 
+            --rojo-alerta: rgba(255, 50, 50, 0.4); 
             --gris-claro: #f4f7f9;
             --beige-randstad: #f7f6f4;
         }
@@ -71,17 +71,19 @@
             padding: 20px;
         }
 
+        /* Alerta con letra más grande y color definido */
         .alerta { 
             background: var(--rojo-alerta);
-            color: #c53030;
+            color: #ffffff;
             padding: 25px; 
-            border-radius: 12px; 
-            font-size: 15px; 
+            border-radius: 15px; 
+            font-size: 18px; /* Letra un poco más grande */
             margin: 40px 0; 
             text-align: center; 
             font-weight: bold;
-            border: 1px solid rgba(197, 48, 48, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.3);
             line-height: 1.6;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
 
         .main-content {
@@ -182,7 +184,6 @@
             font-size: 16px; 
         }
 
-        /* Sobre Randstad con Fondo Azul Celeste */
         .about-section {
             background: var(--azul-celeste);
             padding: 50px 30px;
@@ -229,7 +230,7 @@
 
     <div class="container">
         <div class="alerta">
-            ⚠️ importante: Es importante que entiendas que, llegada la fecha de pago, si no tienes el contrato firmado y la cuenta bancaria registrada, el pago de haberes quedará pendiente hasta que finalices los pasos.
+            ⚠️ es importante que entiendas que, llegada la fecha de pago, si no tienes el contrato firmado y la cuenta bancaria registrada, el pago de haberes quedará pendiente hasta que finalices los pasos.
         </div>
     </div>
 
@@ -240,21 +241,21 @@
             <div class="step-card">
                 <span class="step-tag">paso 1</span>
                 <div class="step-title">ficha de ingreso</div>
-                <div class="step-info">¡Es el paso más importante! Y necesitamos que puedas completarlo lo antes posible. En el mismo te solicitamos información para generar tu alta en BPS, declaración de DGI y confeccionar tu contrato. Ten a mano tu documento de identidad y carné de salud para ingresar las fotos.</div>
+                <div class="step-info">¡Es el paso más importante! En el mismo te solicitamos información para generar tu alta en BPS, declaración de DGI y confeccionar tu contrato. Ten a mano tu documento de identidad y carné de salud para ingresar las fotos.</div>
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSdllAz5zn_TTA8Pt4DHEEYTCc_7P1_gC9BtsKGxD54ySzc5dQ/viewform" class="btn-celeste" target="_blank">completar ficha</a>
             </div>
 
             <div class="step-card">
                 <span class="step-tag">paso 2</span>
                 <div class="step-title">identidad digital</div>
-                <div class="step-info">Utilizamos Identidad Mobile de Abitab para la firma digital de tu contrato con validez legal. Es necesario que cuentes con tu usuario activo para proceder con la firma de tu documentación.</div>
+                <div class="step-info">Utilizamos Identidad Mobile de Abitab para la firma digital de tu contrato. Para que puedas acceder al contrato y firmarlo, es necesario que cuentes con tu usuario activado.</div>
                 <a href="https://iddigital.com.uy/es/identidaddigital/idfirma/" class="btn-celeste" target="_blank">obtener identidad mobile</a>
             </div>
 
             <div class="step-card">
                 <span class="step-tag">paso 3</span>
                 <div class="step-title">asociar medio de pago</div>
-                <div class="step-info">Debes indicar tu preferencia bancaria para asociar a los pagos de salarios de tu actividad. Puedes ingresar tu cuenta personal (PREX o MiDinero inclusive) o solicitar la apertura de cuenta en el banco BBVA.</div>
+                <div class="step-info">Debes indicar tu preferencia bancaria para asociar a los pagos de salarios de tu actividad. Puedes ingresar tu cuenta de cualquier Banco, Prepagas o solicitar la apertura de cuenta en el banco BBVA.</div>
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSd9ch1QrIvWVhPtt8gJLxkcYPRsqigzgCEF9m1JaBw4KAa0oA/viewform" class="btn-celeste" target="_blank">completar formulario de pago</a>
             </div>
         </div>
