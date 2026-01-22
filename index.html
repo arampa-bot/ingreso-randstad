@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -6,258 +6,293 @@
     <title>¡te damos la bienvenida a randstad!</title>
     <style>
         :root { 
-            --azul-randstad: #2175d9; 
+            --azul-oscuro: #0a1a3c; 
+            --azul-intermedio: #1c3b7a; 
+            --azul-celeste: #0096dc; 
             --blanco: #ffffff; 
-            /* Rojo más intenso pero con transparencia equilibrada */
-            --rojo-alerta: rgba(255, 50, 50, 0.4); 
-            --rojo-texto: #ffffff; 
+            --rojo-alerta: rgba(255, 82, 82, 0.2); 
+            --gris-claro: #f4f7f9;
+            --beige-randstad: #f7f6f4;
         }
-
 
         body { 
-            font-family: 'Segoe UI', Arial, sans-serif; 
-            background-color: var(--azul-randstad); 
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
+            background-color: var(--gris-claro); 
             margin: 0; 
-            padding: 20px; 
-            color: var(--blanco); 
+            padding: 0; 
+            color: var(--azul-oscuro); 
         }
-
 
         .logo-text, .step-title, .step-tag, .btn, h2, .footer strong, .section-title {
             text-transform: lowercase;
         }
 
-
-        .header { 
-            text-align: center; 
-            padding: 30px 10px; 
-            margin-bottom: 50px; 
+        .banner-header {
+            width: 100%;
+            background-color: var(--blanco);
+            line-height: 0;
+            overflow: hidden;
         }
-        
-        .logo-text, .about-section h2 { 
+
+        .banner-header img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--blanco) 0%, #eef2f5 100%);
+            padding: 40px 25px;
+            text-align: center;
+            border-bottom: 1px solid #dce4e8;
+        }
+
+        .logo-text { 
             font-weight: bold; 
-            font-size: 28px; 
-            margin-bottom: 20px; 
+            font-size: 32px; 
+            margin-bottom: 25px; 
+            color: var(--azul-oscuro);
         }
-
 
         .intro-box { 
-            font-size: 15px; 
-            line-height: 1.7; 
-            border-left: 5px solid var(--blanco);
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 16px; 
+            line-height: 1.8; 
+            border-left: 5px solid var(--azul-celeste);
             padding-left: 20px;
             text-align: left;
+            color: #4a5568;
         }
 
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
 
-        /* Alerta con rojo más visible y definido */
         .alerta { 
             background: var(--rojo-alerta);
-            color: var(--rojo-texto);
+            color: #c53030;
             padding: 25px; 
-            border-radius: 15px; 
-            font-size: 14px; 
-            margin-bottom: 60px; 
+            border-radius: 12px; 
+            font-size: 15px; 
+            margin: 40px 0; 
             text-align: center; 
             font-weight: bold;
-            border: 2px solid rgba(255, 255, 255, 0.3);
+            border: 1px solid rgba(197, 48, 48, 0.2);
             line-height: 1.6;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
 
+        .main-content {
+            background-color: var(--azul-oscuro);
+            padding: 40px 20px;
+            border-radius: 30px 30px 0 0;
+            color: var(--blanco);
+        }
+
+        .benefits-content {
+            background-color: var(--azul-celeste);
+            padding: 40px 20px;
+            color: var(--azul-oscuro);
+        }
 
         .section-title {
-            font-size: 17px;
+            font-size: 18px;
             font-weight: bold;
-            margin: 60px 0 25px 0;
-            letter-spacing: 1px;
+            margin-bottom: 30px;
             display: flex;
             align-items: center;
         }
 
+        .main-content .section-title { color: var(--blanco); }
+        .benefits-content .section-title { color: var(--azul-oscuro); }
 
         .section-title::after {
             content: "";
             flex: 1;
             height: 1px;
-            background: rgba(255, 255, 255, 0.4);
+            background: currentColor;
+            opacity: 0.3;
             margin-left: 20px;
         }
 
-
         .step-card { 
-            background: rgba(255, 255, 255, 0.15); 
-            backdrop-filter: blur(10px);
+            background: var(--blanco); 
             border-radius: 18px; 
-            padding: 25px; 
+            padding: 30px; 
             margin-bottom: 25px; 
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            color: var(--azul-oscuro);
         }
 
-
-        .step-card.highlight {
-            background: var(--blanco);
-            color: #333;
-            border: none;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        .step-card-beige {
+            background: var(--beige-randstad);
+            border-radius: 18px; 
+            padding: 30px; 
+            margin-bottom: 25px; 
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            color: var(--azul-oscuro);
         }
-
-
-        .step-card.highlight .step-title { color: var(--azul-randstad); }
-        .step-card.highlight .step-tag { background: var(--azul-randstad); color: var(--blanco); }
-        .step-card.highlight .btn { background: var(--azul-randstad); color: var(--blanco); }
-
 
         .step-tag { 
             font-size: 11px; 
             font-weight: bold; 
             letter-spacing: 1px;
-            background: var(--blanco);
-            color: var(--azul-randstad);
-            padding: 3px 10px;
-            border-radius: 5px;
+            background: var(--azul-celeste);
+            color: var(--blanco);
+            padding: 4px 12px;
+            border-radius: 20px;
         }
 
-
-        .step-title { font-size: 22px; font-weight: bold; margin: 15px 0 10px 0; }
-        .step-info { font-size: 15px; margin-bottom: 20px; line-height: 1.6; }
-
-
-        .nota-especial {
-            font-size: 13px;
-            background: rgba(0, 0, 0, 0.07);
-            padding: 12px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            border-left: 4px solid var(--azul-randstad);
+        .step-title { 
+            font-size: 24px; 
+            font-weight: bold; 
+            margin: 15px 0 10px 0; 
+            color: var(--azul-intermedio);
         }
 
+        .step-info { 
+            font-size: 15px; 
+            margin-bottom: 25px; 
+            line-height: 1.6; 
+        }
 
-        .btn { 
+        .btn-celeste { 
             display: block; 
-            background: var(--blanco); 
-            color: var(--azul-randstad); 
+            background: var(--azul-celeste); 
+            color: var(--blanco); 
             text-align: center; 
-            padding: 16px; 
+            padding: 18px; 
             border-radius: 12px; 
             text-decoration: none; 
             font-weight: bold; 
             font-size: 16px; 
-            transition: 0.3s; 
         }
 
+        .btn-marino { 
+            display: block; 
+            background: var(--azul-oscuro); 
+            color: var(--blanco); 
+            text-align: center; 
+            padding: 18px; 
+            border-radius: 12px; 
+            text-decoration: none; 
+            font-weight: bold; 
+            font-size: 16px; 
+        }
 
-        .btn:active { background: #e0e0e0; transform: scale(0.96); }
-
-
+        /* Sobre Randstad con Fondo Azul Celeste */
         .about-section {
-            background: var(--blanco);
-            padding: 35px 25px;
-            border-radius: 20px;
-            margin: 70px 0;
-            font-size: 15px;
-            line-height: 1.7;
-            color: #222;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            background: var(--azul-celeste);
+            padding: 50px 30px;
+            border-radius: 25px;
+            margin: 40px 20px;
+            font-size: 16px;
+            line-height: 1.8;
+            color: var(--blanco);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
         }
-
 
         .about-section h2 { 
-            color: var(--azul-randstad);
-            margin-bottom: 20px;
+            color: var(--blanco); 
+            font-size: 32px; 
+            margin-bottom: 20px; 
         }
-
 
         .footer { 
             text-align: center; 
             font-size: 14px; 
-            margin-top: 60px; 
-            padding: 30px 20px;
-            border-top: 1px solid rgba(255,255,255,0.2);
+            padding: 40px 20px;
+            background-color: var(--azul-oscuro);
+            color: var(--blanco);
             line-height: 1.8;
         }
         
-        a { color: white; text-decoration: none; }
+        .footer a { color: var(--azul-celeste); text-decoration: none; }
     </style>
 </head>
 <body>
 
+    <header class="banner-header">
+        <img src="LinkedIn - Partner for Talent (1).png" alt="Bienvenida a Randstad">
+    </header>
 
-    <div class="header">
+    <div class="hero">
         <div class="logo-text">¡te damos la bienvenida a randstad!</div>
         <div class="intro-box">
-            Para facilitar tu integración y agilizar el ingreso administrativo, encontrarás a continuación una serie de pasos a seguir. Completar cada uno de ellos es esencial para garantizar que cuentes con toda la información necesaria y podamos avanzar con tu alta en BPS, firma de contrato, medio de pago para tus cobros, recibos de sueldo, adelantos, beneficios y puedas comenzar tu nueva etapa con nosotros de la mejor manera posible.
+            Para que tu llegada sea lo más fluida posible y podamos dejar todo listo (tu alta en BPS, contrato, pagos y beneficios), preparamos esta pequeña guía de pasos a seguir. Completarlos con atención nos ayudará a que empieces esta nueva etapa sin preocupaciones administrativas y con todo en orden para tus cobros y beneficios.
             <br><br>
-            Por favor, tómate el tiempo necesario para leer, revisar y completar todos los pasos que detalla el documento. Es una única vez y realizarlo correctamente al inicio evita dudas o falta de información, así como retrasos en la firma del contrato o los pagos.
+            Te pedimos que te tomes un ratito para completar la información con calma; hacerlo bien ahora nos asegura que no tengas demoras con tu contrato o pagos más adelante.
         </div>
     </div>
 
-
-    <div class="alerta">
-        ⚠️ importante: Es importante que entiendas que, llegada la fecha de pago, si no tienes el contrato firmado y la cuenta bancaria registrada, el pago de haberes quedará pendiente hasta que finalices los pasos.
+    <div class="container">
+        <div class="alerta">
+            ⚠️ importante: Es importante que entiendas que, llegada la fecha de pago, si no tienes el contrato firmado y la cuenta bancaria registrada, el pago de haberes quedará pendiente hasta que finalices los pasos.
+        </div>
     </div>
 
+    <div class="main-content">
+        <div class="container">
+            <h2 class="section-title">pasos obligatorios</h2>
 
-    <h2 class="section-title">pasos obligatorios</h2>
+            <div class="step-card">
+                <span class="step-tag">paso 1</span>
+                <div class="step-title">ficha de ingreso</div>
+                <div class="step-info">¡Es el paso más importante! Y necesitamos que puedas completarlo lo antes posible. En el mismo te solicitamos información para generar tu alta en BPS, declaración de DGI y confeccionar tu contrato. Ten a mano tu documento de identidad y carné de salud para ingresar las fotos.</div>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdllAz5zn_TTA8Pt4DHEEYTCc_7P1_gC9BtsKGxD54ySzc5dQ/viewform" class="btn-celeste" target="_blank">completar ficha</a>
+            </div>
 
+            <div class="step-card">
+                <span class="step-tag">paso 2</span>
+                <div class="step-title">identidad digital</div>
+                <div class="step-info">Utilizamos Identidad Mobile de Abitab para la firma digital de tu contrato con validez legal. Es necesario que cuentes con tu usuario activo para proceder con la firma de tu documentación.</div>
+                <a href="https://iddigital.com.uy/es/identidaddigital/idfirma/" class="btn-celeste" target="_blank">obtener identidad mobile</a>
+            </div>
 
-    <div class="step-card highlight">
-        <span class="step-tag">paso 1</span>
-        <div class="step-title">ficha de ingreso</div>
-        <div class="step-info">¡Es el paso más importante! Y necesitamos que puedas completarlo lo antes posible. En el mismo te solicitamos información para generar tu alta en BPS, declaración de DGI y confeccionar tu contrato. Ten a mano tu documento de identidad y carné de salud para ingresar las fotos.</div>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdllAz5zn_TTA8Pt4DHEEYTCc_7P1_gC9BtsKGxD54ySzc5dQ/viewform" class="btn" target="_blank">completar ficha</a>
+            <div class="step-card">
+                <span class="step-tag">paso 3</span>
+                <div class="step-title">asociar medio de pago</div>
+                <div class="step-info">Debes indicar tu preferencia bancaria para asociar a los pagos de salarios de tu actividad. Puedes ingresar tu cuenta personal (PREX o MiDinero inclusive) o solicitar la apertura de cuenta en el banco BBVA.</div>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSd9ch1QrIvWVhPtt8gJLxkcYPRsqigzgCEF9m1JaBw4KAa0oA/viewform" class="btn-celeste" target="_blank">completar formulario de pago</a>
+            </div>
+        </div>
     </div>
 
+    <div class="benefits-content">
+        <div class="container">
+            <h2 class="section-title">gestión y beneficios</h2>
 
-    <div class="step-card highlight">
-        <span class="step-tag">paso 2</span>
-        <div class="step-title">identidad digital</div>
-        <div class="step-info">Utilizamos Identidad Mobile de Abitab para la firma digital de tu contrato con validez legal. Es necesario que cuentes con tu usuario activo para proceder con la firma de tu documentación.</div>
-        <a href="https://iddigital.com.uy/es/identidaddigital/idfirma/" class="btn" target="_blank">obtener identidad mobile</a>
+            <div class="step-card-beige">
+                <span class="step-tag">recibos</span>
+                <div class="step-title">recibos de sueldo</div>
+                <div class="step-info">Días posteriores a tu ingreso recibirás un correo electrónico por parte de Randstad con un código de invitación para activar tu cuenta en TuLegajo. El código vence en 5 días; estate atento para crear tu contraseña y firmar tus recibos.</div>
+                <a href="https://app.tulegajo.com" class="btn-marino">acceder a tulegajo</a>
+            </div>
+
+            <div class="step-card-beige">
+                <span class="step-tag">adelantos</span>
+                <div class="step-title">adelantos de sueldo</div>
+                <div class="step-info">Al cumplir un mes trabajado, podrás solicitar un adelanto de hasta $ 5000 entre el 1 y el 15 de cada mes. Se abonan el día 20 al medio de pago que tengas asociado.</div>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfuT4Y4QoOqYThos2xiYR7X0zuwKYymV_Y3ZcU6HkVKkB-3cQ/viewform" class="btn-marino" target="_blank">solicitar adelanto</a>
+            </div>
+
+            <div class="step-card-beige">
+                <span class="step-tag">beneficios</span>
+                <div class="step-title">club randstad</div>
+                <div class="step-info">Accede a beneficios y descuentos en diversos rubros a través de cuponstar.com al cumplir tu primer mes trabajado. Tu usuario quedará habilitado automáticamente y podrás ingresar con tu documento.</div>
+                <a href="https://clubrandstad.beta.uy.cuponstar.com/" class="btn-marino" target="_blank">explorar beneficios</a>
+            </div>
+        </div>
     </div>
 
-
-    <div class="step-card highlight">
-        <span class="step-tag">paso 3</span>
-        <div class="step-title">asociar medio de pago</div>
-        <div class="step-info">Debes indicar tu preferencia bancaria para asociar a los pagos de salarios de tu actividad. Puedes ingresar tu cuenta personal (PREX o MiDinero inclusive) o solicitar la apertura de cuenta en el banco BBVA.</div>
-        <div class="nota-especial">(*) Aperturas BBVA: Requieren activación por tu parte. Te llegará un mensaje del banco para completar fotos y selfie en su App ingresando como "No soy cliente".</div>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSd9ch1QrIvWVhPtt8gJLxkcYPRsqigzgCEF9m1JaBw4KAa0oA/viewform" class="btn" target="_blank">completar formulario de pago</a>
+    <div class="container">
+        <div class="about-section">
+            <h2>somos randstad.</h2>
+            <p>La misión de Randstad es ser la compañía de talento más equitativa y especializada del mundo, ayudando a las personas a alcanzar su verdadero potencial encontrando el trabajo que mejor desarrolla sus habilidades, y a las organizaciones a encontrar el talento adecuado para sus necesidades, acortando la brecha entre la oferta y la demanda laboral y construyendo el futuro del trabajo.</p>
+        </div>
     </div>
-
-
-    <h2 class="section-title">gestión y beneficios</h2>
-
-
-    <div class="step-card">
-        <span class="step-tag">paso 4</span>
-        <div class="step-title">recibos de sueldo</div>
-        <div class="step-info">Días posteriores a tu ingreso recibirás un correo electrónico por parte de Randstad con un código de invitación para activar tu cuenta en TuLegajo. El código vence en 5 días; estate atento para crear tu contraseña y firmar tus recibos.</div>
-        <a href="https://app.tulegajo.com" class="btn">acceder a tulegajo</a>
-    </div>
-
-
-    <div class="step-card">
-        <span class="step-tag">gestión</span>
-        <div class="step-title">adelantos de sueldo</div>
-        <div class="step-info">Al cumplir un mes trabajado, podrás solicitar un adelanto de hasta $ 5000 entre el 1 y el 15 de cada mes. Se abonan el día 20 al medio de pago que tengas asociado.</div>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfuT4Y4QoOqYThos2xiYR7X0zuwKYymV_Y3ZcU6HkVKkB-3cQ/viewform" class="btn" target="_blank">solicitar adelanto</a>
-    </div>
-
-
-    <div class="step-card">
-        <span class="step-tag">beneficios</span>
-        <div class="step-title">club randstad</div>
-        <div class="step-info">Accede a beneficios y descuentos en diversos rubros a través de cuponstar.com al cumplir tu primer mes trabajado. Tu usuario quedará habilitado automáticamente y podrás ingresar con tu documento.</div>
-        <a href="https://clubrandstad.beta.uy.cuponstar.com/" class="btn" target="_blank">explorar beneficios</a>
-    </div>
-
-
-    <div class="about-section">
-        <h2>somos randstad.</h2>
-        <p>La misión de Randstad es ser la compañía de talento más equitativa y especializada del mundo, ayudando a las personas a alcanzar su verdadero potencial encontrando el trabajo que mejor desarrolla sus habilidades, y a las organizaciones a encontrar el talento adecuado para sus necesidades, acortando la brecha entre la oferta y la demanda laboral y construyendo el futuro del trabajo.</p>
-    </div>
-
 
     <div class="footer">
         <strong>sucursal uruguay.</strong><br>
@@ -265,7 +300,6 @@
         (+598) 2402 4444<br>
         <a href="https://www.randstad.com.uy/">www.randstad.com.uy</a>
     </div>
-
 
 </body>
 </html>
