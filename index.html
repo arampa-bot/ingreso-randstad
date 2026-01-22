@@ -13,6 +13,7 @@
             --naranja-randstad: #ff6600; 
             --gris-claro: #f4f7f9;
             --beige-randstad: #f7f6f4;
+            --gris-faq: #e9ecef; 
         }
 
         body { 
@@ -84,9 +85,6 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.15);
         }
 
-        /* --- INTERCAMBIO DE COLORES DE SECCIONES --- */
-
-        /* Ahora Pasos Obligatorios tiene el fondo celeste de beneficios */
         .main-content {
             background-color: var(--azul-celeste);
             padding: 40px 20px;
@@ -94,7 +92,6 @@
             color: var(--azul-oscuro);
         }
 
-        /* Ahora Gestión y Beneficios tiene el fondo azul oscuro */
         .benefits-content {
             background-color: var(--azul-oscuro);
             padding: 40px 20px;
@@ -121,9 +118,6 @@
             margin-left: 20px;
         }
 
-        /* --- INTERCAMBIO DE TARJETAS Y BOTONES --- */
-
-        /* Pasos 1, 2 y 3 pasan a ser Beige con botón Marino */
         .step-card-beige {
             background: var(--beige-randstad);
             border-radius: 18px; 
@@ -133,7 +127,6 @@
             color: var(--azul-oscuro);
         }
 
-        /* Pasos 4, 5 y 6 pasan a ser Blancos con botón Celeste */
         .step-card-white { 
             background: var(--blanco); 
             border-radius: 18px; 
@@ -190,6 +183,25 @@
             font-size: 16px; 
         }
 
+        .faq-box-container {
+            background: var(--gris-faq);
+            padding: 40px 30px;
+            border-radius: 20px;
+            margin: 40px 20px;
+            text-align: center;
+            border: 1px solid #dee2e6;
+        }
+
+        .faq-box-text {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            color: var(--azul-oscuro);
+            max-width: 750px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
         .about-section {
             background: var(--azul-celeste);
             padding: 50px 30px;
@@ -222,7 +234,7 @@
 <body>
 
     <header class="banner-header">
-        <img src="image (5) (1).png">
+        <img src="image (5) (1).png" alt="Bienvenida a Randstad">
     </header>
 
     <div class="hero">
@@ -295,6 +307,15 @@
     </div>
 
     <div class="container">
+        <div class="faq-box-container">
+            <div class="faq-box-text">
+                En la sección <strong>preguntas frecuentes</strong> encontrarás información detallada sobre reglamentación laboral, licencias, certificaciones médicas, pago de haberes, entre otros.
+            </div>
+            <a href="preguntas.html" class="btn-marino" style="display: inline-block; padding: 15px 40px;">preguntas frecuentes</a>
+        </div>
+    </div>
+
+    <div class="container">
         <div class="about-section">
             <h2>somos randstad.</h2>
             <p>La misión de Randstad es ser la compañía de talento más equitativa y especializada del mundo, ayudando a las personas a alcanzar su verdadero potencial encontrando el trabajo que mejor desarrolla sus habilidades, y a las organizaciones a encontrar el talento adecuado para sus necesidades, acortando la brecha entre la oferta y la demanda laboral y construyendo el futuro del trabajo.</p>
@@ -310,5 +331,6 @@
 
 </body>
 </html>
+
 
 
