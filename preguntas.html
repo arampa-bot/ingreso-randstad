@@ -17,9 +17,7 @@
         body { 
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
             background-color: var(--gris-claro); 
-            margin: 0; 
-            padding: 0; 
-            color: var(--azul-oscuro); 
+            margin: 0; padding: 0; color: var(--azul-oscuro); 
         }
 
         .header-faq {
@@ -29,52 +27,61 @@
             text-align: center;
         }
 
-        .header-faq h1 {
-            text-transform: lowercase;
-            font-size: 28px;
-            margin: 0;
-        }
+        .header-faq h1 { text-transform: lowercase; font-size: 28px; margin: 0; }
 
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-
-        .faq-card {
-            background: var(--blanco);
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-            margin-bottom: 30px;
-        }
+        .container { max-width: 900px; margin: 0 auto; padding: 20px 20px 40px 20px; }
 
         .section-subtitle {
             color: var(--azul-celeste);
             text-transform: lowercase;
             font-weight: bold;
-            border-bottom: 2px solid var(--beige-randstad);
-            padding-bottom: 10px;
-            margin-top: 30px;
-            margin-bottom: 20px;
-            font-size: 25px;
+            margin-top: 40px;
+            margin-bottom: 15px;
+            font-size: 22px;
+            border-left: 4px solid var(--azul-celeste);
+            padding-left: 15px;
         }
 
-        .faq-item {
-            margin-bottom: 25px;
+        /* ESTILO DEL DESPLEGABLE */
+        details {
+            background: var(--blanco);
+            margin-bottom: 10px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            overflow: hidden;
+            transition: all 0.3s ease;
         }
 
-        .faq-question {
+        summary {
+            padding: 18px;
             font-weight: bold;
             color: var(--azul-intermedio);
-            font-size: 17px;
-            margin-bottom: 8px;
+            cursor: pointer;
+            list-style: none; /* Quita la flecha por defecto */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 16px;
+        }
+
+        /* Flecha personalizada */
+        summary::after {
+            content: '+';
+            font-size: 20px;
+            color: var(--azul-celeste);
+        }
+
+        details[open] summary::after {
+            content: '−';
         }
 
         .faq-answer {
+            padding: 0 18px 18px 18px;
             font-size: 15px;
             line-height: 1.7;
             color: #4a5568;
+            border-top: 1px solid var(--gris-claro);
+            padding-top: 15px;
         }
 
         .btn-volver {
@@ -87,22 +94,13 @@
             text-decoration: none;
             font-weight: bold;
             text-transform: lowercase;
-            margin-top: 20px;
-            transition: background 0.3s;
+            margin-top: 30px;
         }
 
-        .btn-volver:hover {
-            background: var(--azul-celeste);
-        }
-
-        .footer-simple {
-            text-align: center;
-            padding: 40px;
-            font-size: 14px;
-            color: #888;
-        }
-
+        .footer-simple { text-align: center; padding: 40px; font-size: 14px; color: #888; }
+        
         a { color: var(--azul-celeste); text-decoration: none; font-weight: bold; }
+        strong { color: var(--azul-oscuro); }
     </style>
 </head>
 <body>
@@ -113,131 +111,123 @@
 
     <div class="container">
         
-        <div class="faq-card">
-            
-            <h2 class="section-subtitle">relación laboral y administrativa</h2>
-            
-            <div class="faq-item">
-                <div class="faq-question">¿quién es mi empleador directo?</div>
-                <div class="faq-answer">Tu empleador legal es **Randstad**. La empresa donde desempeñas tus tareas es la "empresa usuaria". Randstad es responsable de tu contratación, pago de sueldos, aportes a BPS y gestión de legajo.</div>
+        <h2 class="section-subtitle">relación laboral y administrativa</h2>
+        
+        <details>
+            <summary>¿quién es mi empleador directo?</summary>
+            <div class="faq-answer">Tu empleador legal es **Randstad**. La empresa donde desempeñas tus tareas es la "empresa usuaria". Randstad es responsable de tu contratación, pago de sueldos, aportes a BPS y gestión de legajo.</div>
+        </details>
+
+        <details>
+            <summary>¿qué debo hacer si cambio mi número de teléfono o dirección?</summary>
+            <div class="faq-answer">Es fundamental mantener tus datos actualizados. Debes comunicarlo a tu referente de Randstad para asegurar que las notificaciones de BPS, recibos y gestiones lleguen correctamente.</div>
+        </details>
+
+        <details>
+            <summary>documentación vigente</summary>
+            <div class="faq-answer">Es responsabilidad de cada persona mantener al día su cédula de identidad, carné de salud y, en caso de que el cargo lo requiera, libreta de conducir y carné de manipulación de alimentos. La vigencia de estos documentos es obligatoria para mantener el puesto de trabajo.</div>
+        </details>
+
+        <h2 class="section-subtitle">liquidación y recibos</h2>
+
+        <details>
+            <summary>¿cómo y cuándo recibo mi recibo de sueldo?</summary>
+            <div class="faq-answer">Para ver tus recibos de sueldo, debes tener activa la cuenta de TuLegajo. Días posteriores a tu ingreso en Randstad, administración te envió un mail para activarla. Si no la tienes activa, busca ese mail. Si el enlace caducó, comunícate con tu referente en Randstad.</div>
+        </details>
+
+        <details>
+            <summary>¿qué hago si hay un error en mi liquidación?</summary>
+            <div class="faq-answer">Si notas una diferencia en horas, haberes o descuentos, comunícate con tu referente de Randstad detallando el concepto. Verificaremos con la planilla de asistencia de la empresa usuaria para realizar el ajuste si corresponde.</div>
+        </details>
+
+        <h2 class="section-subtitle">certificaciones y salud</h2>
+
+        <details>
+            <summary>¿cómo gestiono una certificación médica?</summary>
+            <div class="faq-answer">En Uruguay, las certificaciones son electrónicas. El médico la ingresa al sistema de BPS. Tu responsabilidad es dar aviso inmediato a Randstad y a la empresa usuaria; no es necesario el papel físico, pero sí confirmar que el médico la haya subido.</div>
+        </details>
+
+        <details>
+            <summary>¿qué hago si tengo un accidente de trabajo?</summary>
+            <div class="faq-answer">Recibe atención médica de urgencia en el BSE. Es obligatorio reportarlo a Randstad inmediatamente para realizar la denuncia formal ante el Banco de Seguros dentro de las 24 horas.</div>
+        </details>
+
+        <h2 class="section-subtitle">licencias y ausencias</h2>
+
+        <details>
+            <summary>¿a quién aviso si tengo que faltar?</summary>
+            <div class="faq-answer">Debes avisar a ambas partes: primero a tu supervisor directo en la empresa usuaria (operativo) y luego a Randstad (administrativo).</div>
+        </details>
+
+        <details>
+            <summary>¿cómo se gestiona la licencia anual?</summary>
+            <div class="faq-answer">Se coordina primero con la empresa usuaria. Una vez aprobada, avisa a Randstad con al menos 15 días de antelación para liquidar el pago en fecha.</div>
+        </details>
+
+        <details>
+            <summary>¿tengo días pagos por estudio o situaciones familiares?</summary>
+            <div class="faq-answer">Con más de seis meses de antigüedad tienes derecho a días de estudio (presentando certificado). También existen licencias por matrimonio, duelo o paternidad/maternidad, siempre justificadas con documentación.</div>
+        </details>
+
+        <h2 class="section-subtitle">cobros e impuestos</h2>
+
+        <details>
+            <summary>¿cuándo se realizan los pagos?</summary>
+            <div class="faq-answer">Los pagos siguen el calendario legal y la fecha de la empresa usuaria (cobras el mismo día que ellos). Es obligatorio tener Ficha, Contrato y Medio de Pago al día.</div>
+        </details>
+
+        <details>
+            <summary>¿cómo se pagan el aguinaldo y el salario vacacional?</summary>
+            <div class="faq-answer">El aguinaldo se paga en junio y diciembre. El salario vacacional se paga el día antes de salir de licencia. Ambos son proporcionales al tiempo trabajado.</div>
+        </details>
+
+        <details>
+            <summary>¿por qué me descuentan irpf en mi recibo?</summary>
+            <div class="faq-answer">Es un impuesto nacional. Randstad actúa como agente de retención según las escalas legales vigentes. Si superas el mínimo imponible, verás el descuento.</div>
+        </details>
+
+        <h2 class="section-subtitle">trámites bancarios</h2>
+
+        <details>
+            <summary>¿puedo elegir el banco donde cobrar mi sueldo?</summary>
+            <div class="faq-answer">Sí, por Ley de Inclusión Financiera. Debes completar el paso 3 de la web indicando banco, cuenta y sucursal correctamente para evitar demoras.</div>
+        </details>
+
+        <h2 class="section-subtitle">beneficios y herramientas</h2>
+
+        <details>
+            <summary>¿tengo acceso a beneficios adicionales?</summary>
+            <div class="faq-answer">Sí, desde tu primer mes accedes a <a href="https://clubrandstad.beta.uy.cuponstar.com/cupones?sortBy=latest" target="_blank">club randstad</a> con más de 800 descuentos. También puedes descargar la App "Club Randstad".</div>
+        </details>
+
+        <h2 class="section-subtitle">gestión de carrera y salida</h2>
+
+        <details>
+            <summary>¿qué pasa si mi contrato en la empresa usuaria termina?</summary>
+            <div class="faq-answer">Mantenemos tu legajo activo. Si tu desempeño fue positivo, tendrás prioridad para ser reasignado/a a nuevas vacantes.</div>
+        </details>
+
+        <details>
+            <summary>¿cómo debo presentar mi renuncia?</summary>
+            <div class="faq-answer">Comunícalo a tu referente con preaviso. La renuncia se firma físicamente en Randstad para gestionar tu liquidación final (licencias, salario vacacional y aguinaldo).</div>
+        </details>
+
+        <h2 class="section-subtitle">espacio de escucha y protocolo</h2>
+
+        <details>
+            <summary>¿qué hago si sufro o presencio acoso?</summary>
+            <div class="faq-answer">
+                No estás solo/a. Contamos con un protocolo formal:<br><br>
+                <strong>denuncia:</strong> Comunícate de inmediato con tu referente de Randstad solicitando una entrevista privada. Trataremos el caso con absoluta reserva y seriedad.
             </div>
-
-            <div class="faq-item">
-                <div class="faq-question">¿qué debo hacer si cambio mi número de teléfono o dirección?</div>
-                <div class="faq-answer">Es fundamental mantener tus datos actualizados. Debes comunicarlo a tu referente de Randstad para asegurar que las notificaciones de BPS, recibos y gestiones lleguen correctamente.</div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">documentación vigente</div>
-                <div class="faq-answer">Es responsabilidad de cada persona mantener al día su cédula de identidad, carné de salud y, en caso de que el cargo lo requiera, libreta de conducir y carné de manipulación de alimentos. La vigencia de estos documentos es obligatoria para mantener el puesto de trabajo.</div>
-            </div>
-
-            <h2 class="section-subtitle">liquidación y recibos</h2>
-
-            <div class="faq-item">
-                <div class="faq-question">¿cómo y cuándo recibo mi recibo de sueldo?</div>
-                <div class="faq-answer">Para ver tus recibos de sueldo, debes tener activa la cuenta de TuLegajo, que es la aplicación que utilizamos para que puedan ver, gestionar y firmar los recibos. Días posteriores a tu ingreso en Randstad, administración te envió un mail solicitándote que actives la cuenta de TuLegajo. Si no la tenes activa, por favor busca este mail y realiza los pasos. En la primera sección web de tu ingreso, también explica detallado como hacerlo. Si el enlace caducó o tienes algún otro inconveniente, comunicate con tu referente en Randstad.</div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">¿qué hago si hay un error en mi liquidación?</div>
-                <div class="faq-answer">Si notas una diferencia en horas, haberes o descuentos, comunícate con tu referente de Randstad detallando el concepto. Nosotros verificaremos con la planilla de asistencia de la empresa usuaria para realizar el ajuste si corresponde.</div>
-            </div>
-
-            <h2 class="section-subtitle">certificaciones y salud</h2>
-
-            <div class="faq-item">
-                <div class="faq-question">¿cómo gestiono una certificación médica?</div>
-                <div class="faq-answer">En Uruguay, las certificaciones son electrónicas. El médico tratante la ingresa directamente al sistema de BPS. Tu única responsabilidad es dar aviso inmediato a Randstad y a la empresa usuaria; no es necesario presentar el papel físico, pero sí confirmar que el médico la haya subido correctamente.</div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">¿qué hago si tengo un accidente de trabajo?</div>
-                <div class="faq-answer">Debes recibir atención médica de urgencia en el Banco de Seguros del Estado. Es obligatorio reportarlo a Randstad ya que debemos contar con la información del accidente y realizar la denuncia formal ante el Banco de Seguros dentro de las 24 horas.</div>
-            </div>
-
-            <h2 class="section-subtitle">licencias y ausencias</h2>
-
-            <div class="faq-item">
-                <div class="faq-question">¿a quién aviso si tengo que faltar?</div>
-                <div class="faq-answer">Debes avisar a ambas partes: primero a tu supervisor directo en la empresa usuaria (por un tema operativo) y luego a Randstad para que procesemos la justificación administrativa.</div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">¿cómo se gestiona la licencia anual?</div>
-                <div class="faq-answer">La fecha de goce se coordina primero con la empresa usuaria. Una vez que ellos aprueban los días, debes informar a Randstad con al menos 15 días de antelación para liquidar el pago de licencia y salario vacacional en fecha.</div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">¿tengo días pagos por estudio o situaciones familiares?</div>
-                <div class="faq-answer">Si cuentas con más de seis meses de antigüedad en la empresa tienes derecho a gozar 6, 9 o 12 días de estudio en el año según la carga horaria de tu contrato (presentando certificado de examen). También, tienes derecho a licencias especiales por matrimonio, por duelo (familiares directos) o por paternidad/maternidad. Siempre deben ser comunicadas con antelación y justificadas con la documentación legal correspondiente.</div>
-            </div>
-
-            <h2 class="section-subtitle">cobros e impuestos</h2>
-
-            <div class="faq-item">
-                <div class="faq-question">¿cuándo se realizan los pagos?</div>
-                <div class="faq-answer">Los pagos se efectúan siguiendo el calendario legal. Randstad se ajusta a la fecha de pago de cada empresa, es decir que cobras el mismo día que los trabajadores de la empresa usuaria. Es requisito excluyente haber completado la Ficha, Firma de Contrato y Medio de Pago para que la liquidación se procese sin demoras.</div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">¿cómo se pagan el aguinaldo y el salario vacacional?</div>
-                <div class="faq-answer">El aguinaldo se paga en dos cuotas (junio y diciembre). El salario vacacional se paga siempre el día antes de que salgas de licencia. Ambos conceptos se generan de forma proporcional al tiempo que hayas trabajado en el año.</div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">¿por qué me descuentan irpf en mi recibo?</div>
-                <div class="faq-answer">El IRPF es un impuesto nacional sobre la renta. Randstad actúa únicamente como agente de retención según las escalas legales vigentes. Si tus ingresos superan el mínimo imponible, verás el descuento reflejado.</div>
-            </div>
-
-            <h2 class="section-subtitle">trámites bancarios</h2>
-
-            <div class="faq-item">
-                <div class="faq-question">¿puedo elegir el banco donde cobrar mi sueldo?</div>
-                <div class="faq-answer">Sí, bajo la Ley de Inclusión Financiera tienes derecho a elegir la institución bancaria. Deberás completar el formulario del paso 3 en la web de ingreso, indicando tu banco, número de cuenta, sucursal. Asegurate de completar correctamente los datos para evitar inconvenientes o demoras al momento de los pagos.</div>
-            </div>
-
-            <h2 class="section-subtitle">beneficios y herramientas</h2>
-
-            <div class="faq-item">
-                <div class="faq-question">¿tengo acceso a beneficios adicionales por ser colaborador de randstad?</div>
-                <div class="faq-answer">Sí, desde tu primer mes en Randstad puedes acceder a más de 800 cupones de descuento en diferentes rubros. Accede con tu CI desde este enlace: <a href="https://clubrandstad.beta.uy.cuponstar.com/cupones?sortBy=latest" target="_blank">club randstad</a>. También podes descargar la App para el celular "Club Randstad" y gestionar los beneficios desde ahí.</div>
-            </div>
-
-            <h2 class="section-subtitle">gestión de carrera y salida</h2>
-
-            <div class="faq-item">
-                <div class="faq-question">¿qué pasa si mi contrato en la empresa usuaria termina?</div>
-                <div class="faq-answer">Al finalizar un proyecto, Randstad mantiene tu legajo activo en nuestra base de datos. Si tu desempeño fue positivo, tendrás prioridad para ser reasignado/a a nuevas vacantes que se ajusten a tu perfil.</div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">¿cómo debo presentar mi renuncia si decido dejar el puesto?</div>
-                <div class="faq-answer">Debes comunicarlo a tu referente en Randstad con un preaviso acorde a tu contrato. La renuncia debe firmarse físicamente de acuerdo al modelo que utiliza Randstad. Esto nos permite gestionar tu liquidación final (egreso) que incluye el pago de licencias no gozadas, salario vacacional generado y aguinaldo proporcional.</div>
-            </div>
-
-            <h2 class="section-subtitle">espacio de escucha y protocolo de actuación</h2>
-
-            <div class="faq-item">
-                <div class="faq-question">¿qué debo hacer si sufro o presencio una situación de acoso en mi lugar de trabajo?</div>
-                <div class="faq-answer">
-                    En Randstad tenemos un compromiso absoluto con los entornos de trabajo seguros y libres de violencia. Si estás pasando por una situación de acoso laboral o sexual, queremos que sepas que no estás solo/a:<br><br>
-                    <strong>Protocolo de actuación:</strong> Contamos con un procedimiento formal diseñado para proteger tu integridad y abordar estos casos con la seriedad que merecen.<br>
-                    <strong>Canalización adecuada:</strong> No te guardes esta situación. Denunciar a través de los canales de Randstad nos permite activar medidas de protección para vos y prevenir que estas situaciones afecten a otros colaboradores.<br>
-                    <strong>Contacto directo:</strong> Si necesitas activar este protocolo, comunicate de inmediato con tu referente de Randstad solicitando una entrevista privada.
-                </div>
-            </div>
-
-        </div>
+        </details>
 
         <div style="text-align: center;">
             <a href="index.html" class="btn-volver">volver a la página de inicio</a>
         </div>
     </div>
 
-    <div class="footer-simple">
-        randstad uruguay - partner for talent.
-    </div>
+    <div class="footer-simple">randstad uruguay - partner for talent.</div>
 
 </body>
 </html>
